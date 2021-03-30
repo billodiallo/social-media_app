@@ -15,6 +15,7 @@ class LikesTest < ApplicationSystemTestCase
     click_on "New Like"
 
     fill_in "Content", with: @like.content
+    fill_in "Post", with: @like.post_id
     fill_in "User", with: @like.user_id
     click_on "Create Like"
 
@@ -27,6 +28,7 @@ class LikesTest < ApplicationSystemTestCase
     click_on "Edit", match: :first
 
     fill_in "Content", with: @like.content
+    fill_in "Post", with: @like.post_id
     fill_in "User", with: @like.user_id
     click_on "Update Like"
 

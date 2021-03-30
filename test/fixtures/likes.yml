@@ -3,7 +3,9 @@
 one:
   content: 1
   user: one
+  post: one
 
 two:
   content: 1
   user: two
+  post: two

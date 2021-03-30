@@ -4,8 +4,8 @@ module ApplicationHelper
 
       content_tag(:div, class: 'd-flex special') do
         (button_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'btn_all bg-primary') +
-          (link_to 'New Event', new_event_path, method: :delete, class: 'btn_all text-light btn_special1') +
-          (link_to 'Profile', users_index_path, class: 'btn_all text-light btn_special1')
+          (link_to 'New Post', new_post_path, method: :delete, class: 'btn_all text-light btn_special1')
+          #(link_to 'Profile', users_index_path, class: 'btn_all text-light btn_special1')
       end
 
     else

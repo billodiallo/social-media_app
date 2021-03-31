@@ -1,18 +1,18 @@
 module ApplicationHelper
-  def user_sessions
-    if user_signed_in?
+  def menu_link_to(link_text, link_path)
+    class_name = current_page?(link_path) ? 'menu-item active' : 'menu-item'
 
-      content_tag(:div, class: 'd-flex special') do
-        (button_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'btn_all bg-primary') +
-          (link_to 'New Post', new_post_path, method: :delete, class: 'btn_all text-light btn_special1')
-          #(link_to 'Profile', users_index_path, class: 'btn_all text-light btn_special1')
-      end
+    content_tag(:div, class: class_name) do
+      link_to link_text, link_path
+    end
+  end
 
+  def like_or_dislike_btn(post)
+    like = Like.find_by(post: post, user: current_user)
+    if like
+      link_to('Dislike!', post_like_path(id: like.id, post_id: post.id), method: :delete)
     else
-
-      (button_to 'Sign In', new_user_session_path, class: 'btn_all bg-primary') +
-        (link_to 'Sign Up', new_user_registration_path, class: 'btn_special1 text-light btn_all')
-
+      link_to('Like!', post_likes_path(post_id: post.id), method: :post)
     end
   end
 end

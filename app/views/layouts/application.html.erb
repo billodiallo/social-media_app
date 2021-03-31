@@ -1,32 +1,41 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>SocialMedia</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>RorSocialScaffold</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
-  <nav class="navbar navbar-expand-sm navbar-light bg-light">
-        <div class="container-fluid">
-            <a class="navbar-brand test9" href="/events">Home</a>
-            <div class="collapse justify-content-between special2 navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#"></a>
-                    </li>
-                </ul>
-                <ul class="navbar-nav">
-                    <%= user_sessions %>
-                </ul>
-            </div>
+    <nav class="nav">
+      <%= link_to 'Stay in touch', root_path %>
+      <div class="menu">
+        <div class="menu-item">
+          <%= menu_link_to 'Timeline', posts_path %>
         </div>
+        <div class="menu-item">
+          <%= menu_link_to 'All users', users_path %>
+        </div>
+      </div>
+      <% if current_user %>
+        <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+      <% else %>
+        <%= link_to 'Sign in', user_session_path %>
+      <% end %>
     </nav>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <%= yield %>
+    <% if notice.present? %>
+      <div class="notice">
+        <p> <%= notice %> </p>
+      </div>
+    <% end %>
+    <% if alert.present? %>
+      <div class="alert">
+        <p> <%= alert %> </p>
+      </div>
+    <% end %>
+    <main class="main">
+      <%= yield %>
+    </main>
   </body>
 </html>

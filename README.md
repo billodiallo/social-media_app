@@ -1,11 +1,13 @@
+![](https://img.shields.io/badge/Microverse-blueviolet)
+
 # Scaffold for social media app with Ruby on Rails
 
 > This repo includes intial code for social media app with basic styling. Its purpose is to be a starting point for Microverse students.
 
 ## Built With
 
-- Ruby v2.7.0
-- Ruby on Rails v5.2.4
+- Ruby v3.0.0
+- Ruby on Rails v6.1.3
 
 ## Live Demo
 
@@ -70,6 +72,19 @@ Open `http://localhost:3000/` in your browser.
 TBA
 
 ## Authors
+
+
+👤 Billo Dallio
+
+- GitHub: [@billodiallo](https://github.com/billodiallo)
+- Twitter: [@BilloDi83547008](https://twitter.com/BilloDi83547008)
+- LinkedIn: [Billo Diallo](https://www.linkedin.com/in/mabillodiallo/)
+
+👤 **Denis Andrei Diaconu**
+
+- GitHub: [@CacheMeGifYouCan](https://github.com/githubhandle)
+- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
+- LinkedIn: [Denis Diaconu](https://linkedin.com/linkedinhandle)
 
 TBA
 

@@ -6,4 +6,9 @@
       <%= render @posts %>
     </ul>
   </article>
+  <section>
+    <%= current_user.friends.each do |event| %>
+          <%= event.name %>
+        <% end %>
+  </section>
 </section>

@@ -1,10 +1,12 @@
+# rubocop:disable  Lint/Void
 #!/usr/bin/env ruby
+Style / MixinUsage
 require 'fileutils'
 include FileUtils
-
+# rubocop:enable  Lint/Void
 # path to your application root.
+# rubocop:enable  Lint/Void
 APP_ROOT = File.expand_path('..', __dir__)
-
 def system!(*args)
   system(*args) || abort("\n== Command #{args} failed ==")
 end

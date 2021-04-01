@@ -10,6 +10,7 @@ class UsersController < ApplicationController
     @posts = @user.posts.ordered_by_most_recent
   end
 
+  # rubocop:disable  Lint/Void
   def friends
     friends_array = friendships.map { |friendship| friendship.friend if friendship.confirmed }
     friends_array + inverse_friendships.map { |friendship| friendship.user if friendship.confirmed }
@@ -28,6 +29,7 @@ class UsersController < ApplicationController
 
   def confirm_friend(user)
     friendship = inverse_friendships.find { |friendship| friendship.user == user }
+    # rubocop:ensable  Lint/Void
     friendship.confirmed = true
     friendship.save
   end

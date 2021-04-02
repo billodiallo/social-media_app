@@ -4,6 +4,10 @@ AllCops:
     - "Guardfile"
     - "Rakefile"
     - "node_modules/**/*"
+    - bin/{rails,rake}'
+    - 'config/**/*'
+    - 'db/**/*'
+    - app/models/*.rb    
 
   DisplayCopNames: true
 
@@ -50,3 +54,6 @@ Style/HashTransformKeys:
   Enabled: false
 Style/HashTransformValues:
   Enabled: false
+Style:
+  Enabled: false
+  

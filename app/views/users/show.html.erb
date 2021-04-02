@@ -4,11 +4,9 @@
     <h3>Recent posts:</h3>
     <ul class="posts">
       <%= render @posts %>
+      <%= @friends.each do |friend|%>
+        <%= friend.name%>
+      <% end %>
     </ul>
   </article>
-  <section>
-    <%= current_user.friends.each do |event| %>
-          <%= event.name %>
-        <% end %>
-  </section>
 </section>

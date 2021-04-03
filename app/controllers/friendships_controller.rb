@@ -1,49 +1,28 @@
 class FriendshipsController < ApplicationController
-    
-    def index
-        @friends = Friendship.all
-        @past_events = Event.past
-        @upcoming_events = Event.upcoming
-      end
-    
-      # GET /events/1 or /events/1.json
-    
-      def show; end
-    
-      # GET /events/new
-    
-      def new
-        @friendship = Friendship.new
-      end
-    
-      # GET /events/1/edit
-    
-      def edit; end
-    
-      # POST /events or /events.json
-    
-      def create
-        @user = current_user.created_friendship.build(friend_params)
-    
-        
-    
-            
-      end
-    
-      # PATCH/PUT /events/1 or /events/1.json
-    
-      
-      
-    
-    
-      
-      private
-    
-      #
-    
-      def event_params
-        params.require(:event).permit(:creator_id, :title, :description, :location, :date, :user_id)
-      end
-    end
-    
+  def new
+    @friendship = Friendship.new
+  end
 
+  def create
+    @friendship = Friendship.new(user_id: params[:user_id], friend_id: params[:friend_id])
+    if friendship.save
+      redirect_to users_path, notice: 'Friend request was sent!!'
+    else
+      redirect_to users_path, notice: 'Unable to sent friend request , try again'
+
+    end
+  end
+
+  def destroy
+    @friendship = Friendship.find_id(id: params[:id])
+    @friendship.destroy
+    redirect_to users_path, notice: 'Friend remove!'
+  end
+
+  def approve
+    @user = User.find(params[:user_id])
+    @friend = User.find(params[:friend_id])
+    @user.confirm_friend(@friend)
+    redirect_to users_path(params[:user_id])
+  end
+end

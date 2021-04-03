@@ -14,15 +14,19 @@ class FriendshipsController < ApplicationController
   end
 
   def destroy
-    @friendship = Friendship.find_id(id: params[:id])
+    @user = User.find(params[:id])
+    @friendship = current_user.inverse_friendships.find { |friendship| friendship.user == @user }
+
     @friendship.destroy
     redirect_to users_path, notice: 'Friend remove!'
   end
 
   def approve
     @user = User.find(params[:user_id])
-    @friend = User.find(params[:friend_id])
-    @user.confirm_friend(@friend)
-    redirect_to users_path(params[:user_id])
+    @friendship = current_user.inverse_friendships.find { |friendship| friendship.user == @user }
+    @friendship.confirmed = true
+    if @friendship.save
+      redirect_to users_path(params[:user_id]), notice: 'accepted'
+    end
   end
 end

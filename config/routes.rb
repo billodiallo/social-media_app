@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root 'posts#index'
-
+resources :friendships, only: %i[destroy]
   devise_for :users
 
   

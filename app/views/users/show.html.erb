@@ -4,11 +4,22 @@
     <h3>Recent posts:</h3>
     <ul class="posts">
       <%= render @posts %>
+      <h3>List of friends</h3>
+      <% @friends.each do |friend|%>
+        <%= friend.name%>
+      <% end %>
+      <h3>List of pending friends</h3>
+      <% @friends_req.each do |friend_req|%>
+        <%= friend_req.name%>
+      <% end %>
+      <h3>List of req friends</h3>
+      <% @friends_pen.each do |friend_pen|%>
+        <%= friend_pen.name%>
+        <%= link_to 'Decline', friendship_path(friend_pen),method: :delete%>
+        <%= link_to 'Approve',  user_approve_friendship_path(friend_pen)%>
+      <% end %>
     </ul>
   </article>
-  <section>
-    <%= current_user.friends.each do |event| %>
-          <%= event.name %>
-        <% end %>
-  </section>
+
+  
 </section>

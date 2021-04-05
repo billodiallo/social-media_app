@@ -7,6 +7,5 @@ RSpec.describe Friendship, type: :model do
     it 'belong to  friend' do
       expect { should belong_to(friend) }
     end
-    
   end
 end

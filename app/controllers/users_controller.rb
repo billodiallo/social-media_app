@@ -12,4 +12,7 @@ class UsersController < ApplicationController
     @friends_req = current_user.pending_friends
     @friends_pen = current_user.friend_requests
   end
+
+  def create
+  end
 end

@@ -27,8 +27,11 @@ RSpec.describe User, type: :model do
     it 'has many like' do
       expect { should has_many(likes) }
     end
-    it 'has many posts' do
-      expect { should has_many(friendships) }
+    it 'has many  confirmed friendship' do
+      expect { should has_many(confirmed_friendships) }
+    end
+    it 'has many friends' do
+      expect { should has_many(friends) }
     end
     it 'has many inverse_friendships' do
       expect { should has_many(inverse_friendships).with_foreign_key }

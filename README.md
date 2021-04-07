@@ -69,7 +69,7 @@ Open `http://localhost:3000/` in your browser.
 
 ### Deployment
 
-TBA
+https://peaceful-meadow-89445.herokuapp.com/users/sign_in
 
 ## Authors
 

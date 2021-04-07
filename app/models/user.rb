@@ -10,17 +10,10 @@ class User < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy
   has_many :friendships
-  has_many :confirmed_friendships
-  has_many :friends
   has_many :inverse_friendships, class_name: 'Friendship', foreign_key: 'friend_id'
 
-  def friends
-    friends_array = friendships.map { |friendship| friendship.friend if friendship.confirmed }
-    # rubocop:disable  Lint/Void
-    friends_array + inverse_friendships.map { |friendship| friendship.user if friendship.confirmed }
-    friends_array.compact
-    # rubocop:enable  Lint/Void
-  end
+  has_many :confirmed_friendships, -> { where confirmed: true }, class_name: 'Friendship'
+  has_many :friends, through: :confirmed_friendships
 
   # Users who have yet to confirme friend requests
   def pending_friends

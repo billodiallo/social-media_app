@@ -27,8 +27,8 @@ class FriendshipsController < ApplicationController
     @friendship.confirmed = true
     if @friendship.save
       Friendship.create!(friend_id: current_user.id,
-                       user_id: @user.id,
-                       confirmed: true)
+                         user_id: @user.id,
+                         confirmed: true)
       redirect_to users_path(params[:user_id]), notice: 'accepted'
     end
   end

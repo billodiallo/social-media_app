@@ -7,12 +7,6 @@
     </div>
     <ul class="posts list-group">
       <div class="wrap1 list-group-item">
-      <h3 class="text-primary">List of friends</h3>
-        <% @friends.each do |friend|%>
-          <p class="text-danger test"><%= friend.name%></p>
-        <% end %>
-      </div>
-      <div class="wrap1 list-group-item">
       <h3 class="text-primary">List of pending friends</h3>
         <% @friends_req.each do |friend_req|%>
         <ul class="list-group list-group-center">

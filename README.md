@@ -9,7 +9,7 @@
 - Ruby v3.0.0
 - Ruby on Rails v6.1.3
 
-## Sreenshoot
+## Sreenshot
 
 ![s1](https://user-images.githubusercontent.com/11162987/113973912-bf9f8500-9845-11eb-8f86-23c44e1ae655.JPG)
 ![s2](https://user-images.githubusercontent.com/11162987/113973918-c0d0b200-9845-11eb-93da-f7c10e222d37.JPG)

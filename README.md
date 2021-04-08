@@ -20,7 +20,9 @@
 
 
 ## Live Demo
-- [Live demo link with Heroku](https://peaceful-meadow-89445.herokuapp.com/)
+
+Dployement ongoing
+[Social Media Project](https://peaceful-meadow-89445.herokuapp.com/users/sign_in)
 
 
 ## Getting Started

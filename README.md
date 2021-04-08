@@ -9,9 +9,21 @@
 - Ruby v3.0.0
 - Ruby on Rails v6.1.3
 
+## Sreenshot
+
+![s1](https://user-images.githubusercontent.com/11162987/113973912-bf9f8500-9845-11eb-8f86-23c44e1ae655.JPG)
+![s2](https://user-images.githubusercontent.com/11162987/113973918-c0d0b200-9845-11eb-93da-f7c10e222d37.JPG)
+![s3](https://user-images.githubusercontent.com/11162987/113973919-c1694880-9845-11eb-86cf-0312a582dad6.JPG)
+![s4](https://user-images.githubusercontent.com/11162987/113973920-c201df00-9845-11eb-9313-9709403bf595.JPG)
+![s5](https://user-images.githubusercontent.com/11162987/113973921-c201df00-9845-11eb-829e-96f1ee2ef59c.JPG)
+![s6](https://user-images.githubusercontent.com/11162987/113973922-c29a7580-9845-11eb-9d7e-2bcdfd153acf.JPG)
+
+
 ## Live Demo
+
 Dployement ongoing
 [Social Media Project](https://peaceful-meadow-89445.herokuapp.com/users/sign_in)
+
 
 ## Getting Started
 
@@ -68,7 +80,7 @@ Open `http://localhost:3000/` in your browser.
 
 ### Deployment
 
-TBA
+https://peaceful-meadow-89445.herokuapp.com/users/sign_in
 
 ## Authors
 
